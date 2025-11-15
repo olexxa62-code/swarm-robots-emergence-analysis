@@ -52,17 +52,14 @@ def create_figure1_phase_transition(df_fig5, output_dir):
     """Figure 1: Phase transition (κ vs ψ)"""
     fig, ax = plt.subplots(figsize=FIGSIZE_SINGLE)
     
-    # Plot data
     ax.plot(df_fig5['kappa_correct'], df_fig5['psi'], 
             'o-', color=COLOR_FIG5, markersize=8, linewidth=2,
             label='Experimental data')
     
-    # Critical region
     ax.axvline(x=1.0, color=COLOR_CRITICAL, linestyle='--', 
                linewidth=2, alpha=0.8, label='κ = 1 (critical)')
     ax.axvspan(0.8, 1.2, alpha=0.15, color=COLOR_CRITICAL)
     
-    # Labels
     ax.set_xlabel('Emergence parameter κ', fontweight='bold')
     ax.set_ylabel('Polarization ψ', fontweight='bold')
     ax.set_title('Phase Transition: Order Parameter vs κ')
@@ -70,14 +67,13 @@ def create_figure1_phase_transition(df_fig5, output_dir):
     ax.set_xlim(0, df_fig5['kappa_correct'].max() * 1.1)
     ax.set_ylim(-0.05, 1.05)
     
-    # Save
     filename = output_dir / 'fig1_phase_transition_kappa_vs_psi.png'
     plt.savefig(filename, dpi=DPI, bbox_inches='tight')
     print(f"Created: {filename}")
     plt.close()
 
 def create_figure2_functional_peak(df_fig5, output_dir):
-    """Figure 2: Functional peak (κ vs R)"""
+    """Figure 2: Functional peak (κ vs R) - UPDATED VERSION"""
     fig, ax = plt.subplots(figsize=FIGSIZE_SINGLE)
     
     # Plot data
@@ -99,10 +95,10 @@ def create_figure2_functional_peak(df_fig5, output_dir):
             markeredgecolor='black', markeredgewidth=1.5,
             label=f'Peak at κ={kappa_max:.3f}')
     
-    # Annotation
+    # SHORT annotation - closer to point
     ax.annotate(f'R = {R_max:.3f}\nκ = {kappa_max:.3f}',
                 xy=(kappa_max, R_max),
-                xytext=(kappa_max + 0.5, R_max - 0.15),
+                xytext=(kappa_max + 0.3, R_max - 0.12),
                 fontsize=10,
                 bbox=dict(boxstyle='round,pad=0.5', 
                          facecolor='yellow', alpha=0.7),
@@ -112,11 +108,13 @@ def create_figure2_functional_peak(df_fig5, output_dir):
     ax.set_xlabel('Emergence parameter κ', fontweight='bold')
     ax.set_ylabel('Group responsiveness R', fontweight='bold')
     ax.set_title('Functional Optimum at Critical Point')
-    ax.legend(loc='upper right')
+    
+    # Legend - UPPER LEFT
+    ax.legend(loc='upper left')
+    
     ax.set_xlim(0, df_fig5['kappa_correct'].max() * 1.1)
     ax.set_ylim(-0.1, 0.9)
     
-    # Save
     filename = output_dir / 'fig2_functional_peak_kappa_vs_R.png'
     plt.savefig(filename, dpi=DPI, bbox_inches='tight')
     print(f"Created: {filename}")
@@ -126,7 +124,7 @@ def create_figure3_combined_experiments(df_fig5, df_fig8, output_dir):
     """Figure 3: Combined experiments comparison"""
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=FIGSIZE_DOUBLE)
     
-    # Left: Fig5 (Response)
+    # Left: Fig5
     ax1.plot(df_fig5['kappa_correct'], df_fig5['R'], 
              'o-', color=COLOR_FIG5, markersize=8, linewidth=2)
     ax1.axvline(x=1.0, color=COLOR_CRITICAL, linestyle='--', 
@@ -144,7 +142,7 @@ def create_figure3_combined_experiments(df_fig5, df_fig8, output_dir):
     ax1.set_title('(a) Collective Response Task')
     ax1.set_xlim(0, 2.5)
     
-    # Right: Fig8 (Evasion)
+    # Right: Fig8
     ax2.plot(df_fig8['kappa_correct'], df_fig8['T_fc'], 
              's-', color=COLOR_FIG8, markersize=8, linewidth=2)
     ax2.axvline(x=1.0, color=COLOR_CRITICAL, linestyle='--', 
@@ -164,7 +162,6 @@ def create_figure3_combined_experiments(df_fig5, df_fig8, output_dir):
     
     plt.tight_layout()
     
-    # Save
     filename = output_dir / 'fig3_combined_both_experiments.png'
     plt.savefig(filename, dpi=DPI, bbox_inches='tight')
     print(f"Created: {filename}")
@@ -174,20 +171,18 @@ def create_figure4_order_vs_function(df_fig5, output_dir):
     """Figure 4: Order parameter vs functional response"""
     fig, ax = plt.subplots(figsize=FIGSIZE_SINGLE)
     
-    # Color by κ regime
     colors = []
     for k in df_fig5['kappa_correct']:
         if k < 0.8:
-            colors.append('#E63946')  # Red: subcritical
+            colors.append('#E63946')
         elif k <= 1.2:
-            colors.append('#06D6A0')  # Green: critical
+            colors.append('#06D6A0')
         else:
-            colors.append('#118AB2')  # Blue: supercritical
+            colors.append('#118AB2')
     
     scatter = ax.scatter(df_fig5['psi'], df_fig5['R'], 
                         c=colors, s=150, alpha=0.7, edgecolors='black')
     
-    # Mark critical point
     idx_max = df_fig5['R'].idxmax()
     ax.scatter(df_fig5.loc[idx_max, 'psi'], 
               df_fig5.loc[idx_max, 'R'],
@@ -195,7 +190,6 @@ def create_figure4_order_vs_function(df_fig5, output_dir):
               edgecolors='black', linewidths=2,
               zorder=10, label='Critical point (κ ≈ 1)')
     
-    # Labels
     ax.set_xlabel('Polarization ψ (order parameter)', fontweight='bold')
     ax.set_ylabel('Group responsiveness R (function)', fontweight='bold')
     ax.set_title('High Order Does Not Guarantee High Function')
@@ -203,7 +197,6 @@ def create_figure4_order_vs_function(df_fig5, output_dir):
     ax.set_xlim(-0.05, 1.05)
     ax.set_ylim(-0.1, 0.9)
     
-    # Custom legend for colors
     from matplotlib.patches import Patch
     legend_elements = [
         Patch(facecolor='#E63946', label='Subcritical (κ < 0.8)'),
@@ -212,7 +205,6 @@ def create_figure4_order_vs_function(df_fig5, output_dir):
     ]
     ax.legend(handles=legend_elements, loc='lower right')
     
-    # Save
     filename = output_dir / 'fig4_order_vs_function.png'
     plt.savefig(filename, dpi=DPI, bbox_inches='tight')
     print(f"Created: {filename}")
@@ -224,21 +216,17 @@ def main():
     print("GENERATING PUBLICATION-QUALITY FIGURES")
     print("="*80 + "\n")
     
-    # Set style
     set_publication_style()
     
-    # Load data
     data_path = Path("data/swarm_robots_complete_data.csv")
     df = pd.read_csv(data_path)
     
     df_fig5 = df[df['experiment'] == 'fig5'].copy()
     df_fig8 = df[df['experiment'] == 'fig8'].copy()
     
-    # Create output directory
     output_dir = Path("figures/publication")
     output_dir.mkdir(exist_ok=True)
     
-    # Generate figures
     print("Creating Figure 1: Phase transition...")
     create_figure1_phase_transition(df_fig5, output_dir)
     
