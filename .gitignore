@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+my_env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.bak
+*.tmp
+*~
+
+# Large data files (optional - uncomment if needed)
+# *.mat
+# *.h5
+
+# Keep everything else
+!data/*.csv
+!figures/**/*.png
+!docs/**/*.pdf

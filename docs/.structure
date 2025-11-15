@@ -1,0 +1,16 @@
+Academic Documentation Structure
+================================
+
+Author: Oleksii Onasenko
+Developer: SubstanceNet
+Theoretical Framework: The Emergence Parameter κ ≈ 1: An Empirical Signature of Criticality in Physical and Biological Systems
+
+Files to create:
+1. 01_Mathematical_Framework.md - Pure mathematical definitions
+2. 02_Experimental_Setup.md - Lei et al. 2023 methodology
+3. 03_Data_Analysis.md - Processing pipeline
+4. 04_Results.md - Findings
+5. 05_Statistical_Validation.md - Tests and validation
+6. 06_Conclusions.md - Summary and implications
+
+Style: Academic, formal, no emojis, no cross-system references
