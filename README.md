@@ -90,6 +90,7 @@ where:
 ```
 swarm-robots-emergence-analysis/
 ├── README.md                        # This file
+├── LICENSE                          # Apache 2.0
 ├── requirements.txt                 # Python dependencies
 │
 ├── code/                            # Analysis scripts
@@ -216,9 +217,18 @@ https://doi.org/10.1098/rsif.2023.0176
 
 ## License
 
-**Code:** MIT License (academic and research use)  
-**Data:** Derived from published scientific literature  
-**Documentation:** CC BY 4.0
+This project is licensed under the **Apache License 2.0** - see the [LICENSE](LICENSE) file for details.
+
+**Summary:**
+- ✓ Commercial use allowed
+- ✓ Modification allowed
+- ✓ Distribution allowed
+- ✓ Patent use allowed
+- ✓ Private use allowed
+- ⚠ Trademark use NOT granted
+- ⚠ Liability and warranty disclaimed
+
+**Copyright © 2025 Oleksii Onasenko**
 
 ---
 
