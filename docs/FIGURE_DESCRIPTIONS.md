@@ -1,5 +1,10 @@
 # Figure Descriptions: System A.2 (Swarm Robots)
 
+**System:** A.2 Swarm Robots  
+**Author:** Oleksii Onasenko  
+**Developer:** SubstanceNet  
+**Theoretical Framework:** The Emergence Parameter κ ≈ 1: An Empirical Signature of Criticality in Physical and Biological Systems
+
 ## Overview
 All figures generated at **600 DPI** in publication-ready quality. They visualize the key result: **κ = 1.0 gives maximum collective response** in programmable swarm robots.
 

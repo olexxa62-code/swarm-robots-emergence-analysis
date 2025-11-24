@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+title: "A.2 Swarm Robots: Emergence Parameter κ ≈ 1 Analysis"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - given-names: Oleksii
+    family-names: Onasenko
+    email: olexxa62@gmail.com
+    orcid: https://orcid.org/0009-0007-7017-8161
+    affiliation: SubstanceNet
+repository-code: 
+url: 
+abstract: |
+  Validation of the emergence parameter κ ≈ 1 as a signature of criticality
+  in programmable swarm robots. Analysis demonstrates that maximum collective
+  function occurs at κ = 0.976 ± 0.022, confirming the criticality hypothesis
+  for Vicsek-like interactions in robotic swarms.
+keywords:
+  - emergence parameter
+  - criticality
+  - swarm robotics
+  - collective behavior
+  - Vicsek model
+license: Apache-2.0
+version: 1.0.0
+date-released: 2024-11-24
+references:
+  - type: article
+    authors:
+      - family-names: Lei
+        given-names: Xiaokang
+      - family-names: Xiang
+        given-names: Yalun
+      - family-names: Duan
+        given-names: Mengyuan
+      - family-names: Peng
+        given-names: Xingguang
+    title: "Exploring the criticality hypothesis using programmable swarm robots with Vicsek-like interactions"
+    journal: "Journal of the Royal Society Interface"
+    volume: 20
+    year: 2023
+    doi: 10.1098/rsif.2023.0176

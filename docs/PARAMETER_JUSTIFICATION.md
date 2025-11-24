@@ -1,6 +1,11 @@
 # Обґрунтування критичних параметрів Ac та Λc
 ## Система А.2: Swarm Robots (Lei et al. 2023)
 
+**System:** A.2 Swarm Robots  
+**Author:** Oleksii Onasenko  
+**Developer:** SubstanceNet  
+**Theoretical Framework:** The Emergence Parameter κ ≈ 1: An Empirical Signature of Criticality in Physical and Biological Systems
+
 **Дата:** November 8, 2025  
 **Статус:**  ПІДТВЕРДЖЕНО
 

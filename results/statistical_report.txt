@@ -15,7 +15,7 @@ RESULTS:
   Contains κ=1: YES
 
 CONCLUSION:
-  ✅ κ ≈ 1 hypothesis CONFIRMED
-  ✅ Both statistical tests support κ = 1 at criticality
+   κ ≈ 1 hypothesis CONFIRMED
+   Both statistical tests support κ = 1 at criticality
 
 ================================================================================

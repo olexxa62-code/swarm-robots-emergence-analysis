@@ -1,13 +1,13 @@
 # Data Provenance and Traceability
-## System A.2: Swarm Robots
-
-**Document Version:** 1.0  
-**Date:** November 8, 2025  
-**Author:** Oleksii Onasenko
+## 
+**System:** A.2 Swarm Robots  
+**Author:** Oleksii Onasenko  
+**Developer:** SubstanceNet  
+**Theoretical Framework:** The Emergence Parameter κ ≈ 1: An Empirical Signature of Criticality in Physical and Biological Systems
 
 ---
 
-## 📚 Primary Source
+##  Primary Source
 
 **Publication:**
 - **Title:** "Exploring the criticality hypothesis using programmable swarm robots with Vicsek-like interactions"
@@ -25,7 +25,7 @@
 
 ---
 
-## 🤖 Experimental Setup
+##  Experimental Setup
 
 ### Hardware
 - **Robots:** 30 × SwarmBang robots
@@ -104,7 +104,7 @@ v_i(t+1) = v̄_neighbors + w_ali × (v̄_neighbors - v_i) + η_noise
 
 ---
 
-## 🔧 Data Corrections and Transformations
+##  Data Corrections and Transformations
 
 ### Critical Issue: d_nn vs ⟨NND⟩
 
@@ -160,7 +160,7 @@ d_nn = 160.8 mm (measured)
 
 ---
 
-## 📋 Final Dataset: swarm_robots_complete_data.csv
+##  Final Dataset: swarm_robots_complete_data.csv
 
 **File location:** `data/swarm_robots_complete_data.csv`
 
@@ -217,7 +217,7 @@ fig8,25,30,0.897,217.0,160.8,,326.8,0.960,critical
 
 ---
 
-## 🔗 Data Availability
+##  Data Availability
 
 **Original data:**
 - Published as supplementary materials with Lei et al. (2023)
@@ -259,7 +259,7 @@ fig8,25,30,0.897,217.0,160.8,,326.8,0.960,critical
 
 ---
 
-## 📝 Citation
+##  Citation
 
 When using this data, cite both:
 
@@ -278,7 +278,7 @@ System A.2 in κ≈1 Universality Study.
 
 ---
 
-## 📞 Contact
+##  Contact
 
 **For questions about:**
 - Original data: Contact Lei et al. via paper

@@ -2,7 +2,7 @@
 SWARM ROBOTS: Fig5 (Response) + Fig8 (Evasion)
 ======================================================================
 
-📊 FIG5 - Collective Response to Stimuli
+ FIG5 - Collective Response to Stimuli
 ----------------------------------------------------------------------
  w_ali   psi  NND_mean     R  kappa_correct
     10 0.151     191.7   NaN            NaN
@@ -17,14 +17,14 @@ SWARM ROBOTS: Fig5 (Response) + Fig8 (Evasion)
    120 0.979     199.8 0.691          0.965
    150 0.978     199.0 0.660          0.960
 
-🎯 Critical point (max R):
+ Critical point (max R):
    w_ali = 20
    ψ = 0.991
    ⟨NND⟩ = 202.7 mm
    R = 0.776
-   κ = 0.991 ✅
+   κ = 0.991 
 
-📊 FIG8 - Collective Evasion from Predator
+ FIG8 - Collective Evasion from Predator
 ----------------------------------------------------------------------
  w_ali   psi  NND_mean  T_fc  kappa_correct
      5 0.147     146.7 226.4          0.106
@@ -38,15 +38,15 @@ SWARM ROBOTS: Fig5 (Response) + Fig8 (Evasion)
    100 0.881     196.3 305.0          0.853
    150 0.883     164.9 318.6          0.718
 
-🎯 Critical point (max T_fc):
+ Critical point (max T_fc):
    w_ali = 25
    ψ = 0.897
    ⟨NND⟩ = 217.0 mm
    T_fc = 326.8 s
-   κ = 0.960 ✅
+   κ = 0.960 
 
 ======================================================================
-📊 COMPARISON
+ COMPARISON
 ======================================================================
 
 κ at criticality:
@@ -58,5 +58,5 @@ Ratio d_nn/⟨NND⟩:
    Fig5: 0.749
    Fig8: 0.741
 
-✅ CONCLUSION: κ ≈ 1 confirmed for both experiments!
+ CONCLUSION: κ ≈ 1 confirmed for both experiments!
 ======================================================================
