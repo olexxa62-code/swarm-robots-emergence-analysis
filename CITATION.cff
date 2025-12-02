@@ -8,7 +8,7 @@ authors:
     email: olexxa62@gmail.com
     orcid: https://orcid.org/0009-0007-7017-8161
     affiliation: SubstanceNet
-repository-code: 
+repository-code: "https://github.com/olexxa62-code/swarm-robots-emergence-analysis"
 url: 
 abstract: |
   Validation of the emergence parameter κ ≈ 1 as a signature of criticality

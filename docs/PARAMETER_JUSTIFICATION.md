@@ -1,263 +1,262 @@
-# Обґрунтування критичних параметрів Ac та Λc
-## Система А.2: Swarm Robots (Lei et al. 2023)
+# Critical Parameters Justification: Ac and Λc
+## System A.2: Swarm Robots (Lei et al. 2023)
 
 **System:** A.2 Swarm Robots  
 **Author:** Oleksii Onasenko  
 **Developer:** SubstanceNet  
 **Theoretical Framework:** The Emergence Parameter κ ≈ 1: An Empirical Signature of Criticality in Physical and Biological Systems
-
-**Дата:** November 8, 2025  
-**Статус:**  ПІДТВЕРДЖЕНО
+**Date:** November 8, 2025  
+**Status:**  CONFIRMED
 
 ---
 
-##  ФОРМУЛА κ ДЛЯ SWARM ROBOTS
+##  κ FORMULA FOR SWARM ROBOTS
 
 $$\kappa = \frac{N}{N_c} \cdot \psi \cdot \frac{\langle NND \rangle}{\Lambda_c}$$
 
-Де:
-- **N** = 30 роботів (фіксовано в експерименті)
-- **Nc = 30** (критичний розмір рою)
-- **ψ** = polarization (виміряний order parameter)
-- **⟨NND⟩** = mean nearest neighbor distance (мм)
-- **Λc = 202.7 mm** (критична відстань)
+Where:
+- **N** = 30 robots (fixed in experiments)
+- **Nc = 30** (critical swarm size)
+- **ψ** = polarization (measured order parameter)
+- **⟨NND⟩** = mean nearest neighbor distance (mm)
+- **Λc = 202.7 mm** (critical spatial correlation)
 
-**Спрощена формула** (оскільки N/Nc = 1):
+**Simplified formula** (since N/Nc = 1):
 
 $$\kappa = \psi \cdot \frac{\langle NND \rangle}{202.7}$$
 
 ---
 
-## 📐 ПАРАМЕТР Nc (КРИТИЧНА КІЛЬКІСТЬ РОБОТІВ)
+## 📐 PARAMETER Nc (CRITICAL NUMBER OF ROBOTS)
 
-### Визначення
+### Definition
 
-**Nc = 30 роботів**
+**Nc = 30 robots**
 
-### Обґрунтування
+### Justification
 
- **Експериментальний дизайн:**
-- Lei et al. (2023) використали фіксовану кількість N=30 для всіх експериментів
-- Це базовий розмір рою для дослідження колективної поведінки
-- Система спроектована працювати критично при N=30
+ **Experimental design:**
+- Lei et al. (2023) used fixed N=30 for all experiments
+- This is the baseline swarm size for studying collective behavior
+- System designed to operate critically at N=30
 
- **Порівняння з літературою:**
-- Vicsek et al. (1995): критичність починається від N~50-100
-- Reynolds (1987): flocking behavior від N~20-40
-- Lei et al.: оптимізація під N=30
+ **Literature comparison:**
+- Vicsek et al. (1995): criticality emerges from N~50-100
+- Reynolds (1987): flocking behavior from N~20-40
+- Lei et al.: optimized for N=30
 
- **Фізичний сенс:**
-- Менше 30: недостатньо для стійкої колективної поведінки
-- 30: оптимальний баланс між керованістю та emergence
-- Більше 30: можливе, але не досліджено в цій роботі
+ **Physical meaning:**
+- Below 30: insufficient for stable collective behavior
+- At 30: optimal balance between control and emergence
+- Above 30: possible but not explored in this work
 
-### Чому N/Nc = 1
+### Why N/Nc = 1
 
-Оскільки N фіксовано на 30 у всіх експериментах:
+Since N is fixed at 30 in all experiments:
 ```
 N/Nc = 30/30 = 1
 ```
 
-Це означає, що система завжди працює з критичною кількістю агентів. Варіація κ досягається через зміну **w_ali** (alignment weight), який контролює **ψ** та **⟨NND⟩**.
+This means the system always operates at critical agent count. Variation in κ is achieved by changing **w_ali** (alignment weight), which controls **ψ** and **⟨NND⟩**.
 
 ---
 
-## 📏 ПАРАМЕТР Λc (КРИТИЧНА ПРОСТОРОВА КОРЕЛЯЦІЯ)
+## 📏 PARAMETER Λc (CRITICAL SPATIAL CORRELATION)
 
-### Визначення
+### Definition
 
 **Λc = 202.7 mm**
 
-### Методологія визначення
+### Determination Methodology
 
-**Джерело:** Експеримент Fig5 при w_ali=20 (максимум R)
+**Source:** Fig5 experiment at w_ali=20 (maximum R)
 
-**Крок 1: Ідентифікація критичної точки**
+**Step 1: Identify critical point**
 ```
 w_ali = 20 → max R = 0.776
 ```
 
-**Крок 2: Вимірювання ⟨NND⟩ при критичності**
+**Step 2: Measure ⟨NND⟩ at criticality**
 ```
 ⟨NND⟩(w_ali=20) = 202.7 mm
 ```
 
-**Крок 3: Визначення Λc**
+**Step 3: Define Λc**
 ```
-Λc := ⟨NND⟩ при максимальній функціональності
+Λc := ⟨NND⟩ at maximum functionality
 Λc = 202.7 mm
 ```
 
-### Фізична інтерпретація
+### Physical Interpretation
 
-**Що представляє Λc:**
-- Оптимальна відстань між роботами для когерентного руху
-- Баланс між:
-  - Занадто близько → колізії, заклинення
-  - Занадто далеко → втрата зв'язку, розпад рою
+**What Λc represents:**
+- Optimal distance between robots for coherent motion
+- Balance between:
+  - Too close → collisions, jamming
+  - Too far → loss of connectivity, swarm dissolution
 
-**Зв'язок з параметрами Vicsek:**
+**Connection to Vicsek parameters:**
 - r₀ (interaction radius) = 300 mm
 - Λc ≈ 0.68 × r₀
-- Роботи взаємодіють на відстані ~2/3 від максимальної
+- Robots interact at ~2/3 of maximum range
 
 **Arena constraints:**
 - Arena: 3m × 3m
-- Λc = 0.2 m → 30 роботів розміщуються з проміжками ~20 cm
-- Це дозволяє вільний рух без over-crowding
+- Λc = 0.2 m → 30 robots placed with ~20 cm spacing
+- Allows free movement without over-crowding
 
-### Валідація через Fig8
+### Validation via Fig8
 
-**Перевірка незалежності:**
+**Independence check:**
 
-Використовуючи Λc=202.7 з Fig5, прогнозуємо κ для Fig8:
+Using Λc=202.7 from Fig5, predict κ for Fig8:
 
 | w_ali | ⟨NND⟩ (Fig8) | κ predicted | κ observed | Match |
 |-------|-------------|-------------|------------|-------|
 | 25 | 217.0 mm | 0.960 | 0.960 |  |
 
-**Висновок:** Λc=202.7 mm працює для обох експериментів!
+**Conclusion:** Λc=202.7 mm works for both experiments!
 
 ---
 
-## 🔄 ВЗАЄМОДІЯ w_ali → ψ, ⟨NND⟩
+## 🔄 INTERACTION: w_ali → ψ, ⟨NND⟩
 
-### Як w_ali впливає на параметри
+### How w_ali affects parameters
 
-**w_ali** (alignment weight) контролює силу вирівнювання швидкостей:
+**w_ali** (alignment weight) controls velocity alignment strength:
 
-**Низький w_ali (< 17):**
-- Слабке вирівнювання
-- ψ низька (~0.2)
-- ⟨NND⟩ мала (~190 mm)
-- Випадковий рух
+**Low w_ali (< 17):**
+- Weak alignment
+- Low ψ (~0.2)
+- Small ⟨NND⟩ (~190 mm)
+- Random motion
 - **κ < 0.7**
 
-**Критичний w_ali (17-25):**
-- Оптимальне вирівнювання
-- ψ висока (~0.9-1.0)
-- ⟨NND⟩ критична (~200-217 mm)
-- Когерентний рух з гнучкістю
+**Critical w_ali (17-25):**
+- Optimal alignment
+- High ψ (~0.9-1.0)
+- Critical ⟨NND⟩ (~200-217 mm)
+- Coherent motion with flexibility
 - **κ ≈ 1**
 
-**Високий w_ali (> 30):**
-- Надмірне вирівнювання
-- ψ дуже висока (~0.99)
-- ⟨NND⟩ стабілізується (~200 mm)
-- Жорсткий рух, втрата адаптивності
+**High w_ali (> 30):**
+- Excessive alignment
+- Very high ψ (~0.99)
+- Stabilized ⟨NND⟩ (~200 mm)
+- Rigid motion, lost adaptability
 - **κ > 1**
 
-### Компенсаційні ефекти
+### Compensation Effects
 
-**Приклад 1: w_ali=20 (Fig5)**
+**Example 1: w_ali=20 (Fig5)**
 ```
-ψ = 0.991 (майже максимум)
-⟨NND⟩ = 202.7 mm (точно Λc)
+ψ = 0.991 (near maximum)
+⟨NND⟩ = 202.7 mm (exactly Λc)
 → κ = 0.991 × (202.7/202.7) = 0.991 ≈ 1 
 ```
 
-**Приклад 2: w_ali=25 (Fig8)**
+**Example 2: w_ali=25 (Fig8)**
 ```
-ψ = 0.897 (трохи менше)
-⟨NND⟩ = 217.0 mm (більше за Λc)
+ψ = 0.897 (slightly lower)
+⟨NND⟩ = 217.0 mm (above Λc)
 → κ = 0.897 × (217.0/202.7) = 0.960 ≈ 1 
 ```
 
-**Механізм:**
-- Зниження ψ компенсується збільшенням ⟨NND⟩
-- Система "знаходить" κ≈1 через різні комбінації
+**Mechanism:**
+- Decrease in ψ compensated by increase in ⟨NND⟩
+- System "finds" κ≈1 through different combinations
 
 ---
 
-##  КРИТИЧНА МЕТРИКА: ⟨NND⟩ vs d_nn
+##  CRITICAL METRIC: ⟨NND⟩ vs d_nn
 
-### Проблема з d_nn
+### Problem with d_nn
 
-**d_nn** = mean(min over robots) = середнє мінімальної відстані
+**d_nn** = mean(min over robots) = average of minimum distances
 
-**Чому НЕ використовувати:**
-- Занижує просторову кореляцію
-- d_nn/⟨NND⟩ ≈ 0.741 (систематична похибка!)
-- Дає κ=0.71 замість κ=0.96 для Fig8
+**Why NOT to use:**
+- Underestimates spatial correlation
+- d_nn/⟨NND⟩ ≈ 0.741 (systematic bias!)
+- Gives κ=0.71 instead of κ=0.96 for Fig8
 
-### Правильна метрика: ⟨NND⟩
+### Correct metric: ⟨NND⟩
 
-**⟨NND⟩** = mean(mean over robots) = середня відстань до найближчого
+**⟨NND⟩** = mean(mean over robots) = average nearest neighbor distance
 
-**Чому використовувати:**
-- Відображає типову просторову шкалу
-- Узгоджена між Fig5 та Fig8
-- Дає κ≈1 при критичності
+**Why to use:**
+- Reflects typical spatial scale
+- Consistent between Fig5 and Fig8
+- Gives κ≈1 at criticality
 
-### Корекція для Fig8
+### Correction for Fig8
 
-**Дані Lei et al.:**
-- Подають тільки d_nn для Fig8
-- Не подають ⟨NND⟩ безпосередньо
+**Lei et al. data:**
+- Only provide d_nn for Fig8
+- Do not provide ⟨NND⟩ directly
 
-**Наше рішення:**
+**Our solution:**
 ```
-Ratio з Fig5: d_nn/⟨NND⟩ = 0.741 ± 0.038
+Ratio from Fig5: d_nn/⟨NND⟩ = 0.741 ± 0.038
 
-Оцінка для Fig8:
+Estimate for Fig8:
 ⟨NND⟩_fig8 = d_nn / 0.741
 
-Приклад (w_ali=25):
+Example (w_ali=25):
 ⟨NND⟩ = 160.8 / 0.741 = 217.0 mm 
 ```
 
-**Валідація:**
-- Цей підхід дає κ=0.96 для Fig8
-- Узгоджується з κ=0.99 для Fig5
-- Обидва ≈ 1!
+**Validation:**
+- This approach gives κ=0.96 for Fig8
+- Consistent with κ=0.99 for Fig5
+- Both ≈ 1!
 
 ---
 
-##  ФІНАЛЬНЕ ОБҐРУНТУВАННЯ
+##  FINAL JUSTIFICATION
 
-### Чому Nc = 30
+### Why Nc = 30
 
-1. **Експериментальний дизайн** - фіксовано Lei et al.
-2. **Оптимальний розмір** - баланс emergence vs контроль
-3. **Літературна підтримка** - типовий розмір для swarm robotics
+1. **Experimental design** - fixed by Lei et al.
+2. **Optimal size** - balance between emergence and control
+3. **Literature support** - typical size for swarm robotics
 
-### Чому Λc = 202.7 mm
+### Why Λc = 202.7 mm
 
-1. **Емпірично визначено** з Fig5 при max R
-2. **Фізично обґрунтовано** - 68% від r₀
-3. **Незалежно валідовано** через Fig8
-4. **Універсальність** - працює для різних завдань (response, evasion)
+1. **Empirically determined** from Fig5 at max R
+2. **Physically justified** - 68% of r₀
+3. **Independently validated** via Fig8
+4. **Universality** - works for different tasks (response, evasion)
 
-### Переваги методології
+### Methodology Advantages
 
- **Прозорість:**
-- Всі величини виміряні
-- Розрахунки відтворювані
-- Немає hidden parameters
+ **Transparency:**
+- All quantities measured
+- Calculations reproducible
+- No hidden parameters
 
- **Робастність:**
-- Працює для Fig5 (response)
-- Працює для Fig8 (evasion)
-- Стійка до варіацій метрики (±4%)
+ **Robustness:**
+- Works for Fig5 (response)
+- Works for Fig8 (evasion)
+- Stable to metric variations (±4%)
 
- **Фізична інтерпретація:**
-- Nc - критичний розмір групи
-- Λc - оптимальна просторова кореляція
-- κ≈1 - баланс порядку та гнучкості
+ **Physical interpretation:**
+- Nc - critical group size
+- Λc - optimal spatial correlation
+- κ≈1 - balance of order and flexibility
 
 ---
 
-## 📚 ПОСИЛАННЯ
+## 📚 REFERENCES
 
-**Основне джерело:**
-- Lei et al. (2023). "Exploring the criticality hypothesis using programmable swarm robots with Vicsek-like interactions." Royal Society Interface. DOI: 10.1098/rsif.2023.0176
+**Primary source:**
+- Lei et al. (2023). "Exploring the criticality hypothesis using programmable swarm robots with Vicsek-like interactions." Royal Society Interface. https://doi.org/10.1098/rsif.2023.0176
 
-**Методологія:**
+**Methodology:**
 - Vicsek et al. (1995). Novel type of phase transition in a system of self-driven particles. PRL.
-- Reynolds (1987). Floids, herds, and schools: A distributed behavioral model. SIGGRAPH.
+- Reynolds (1987). Flocks, herds, and schools: A distributed behavioral model. SIGGRAPH.
 
 ---
 
-**Останнє оновлення:** November 8, 2025  
-**Автор:** Oleksii Onasenko  
-**Статус:** Затверджено для публікації
+**Last Updated:** November 8, 2025  
+**Author:** Oleksii Onasenko  
+**Status:** Approved for publication
