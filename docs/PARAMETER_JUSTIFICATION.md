@@ -27,7 +27,7 @@ $$\kappa = \psi \cdot \frac{\langle NND \rangle}{202.7}$$
 
 ---
 
-## 📐 PARAMETER Nc (CRITICAL NUMBER OF ROBOTS)
+## PARAMETER Nc (CRITICAL NUMBER OF ROBOTS)
 
 ### Definition
 
@@ -61,7 +61,7 @@ This means the system always operates at critical agent count. Variation in κ i
 
 ---
 
-## 📏 PARAMETER Λc (CRITICAL SPATIAL CORRELATION)
+##  PARAMETER Λc (CRITICAL SPATIAL CORRELATION)
 
 ### Definition
 
@@ -119,7 +119,7 @@ Using Λc=202.7 from Fig5, predict κ for Fig8:
 
 ---
 
-## 🔄 INTERACTION: w_ali → ψ, ⟨NND⟩
+##  INTERACTION: w_ali → ψ, ⟨NND⟩
 
 ### How w_ali affects parameters
 
@@ -246,7 +246,7 @@ Example (w_ali=25):
 
 ---
 
-## 📚 REFERENCES
+##  REFERENCES
 
 **Primary source:**
 - Lei et al. (2023). "Exploring the criticality hypothesis using programmable swarm robots with Vicsek-like interactions." Royal Society Interface. https://doi.org/10.1098/rsif.2023.0176
