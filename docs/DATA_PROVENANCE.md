@@ -1,5 +1,5 @@
 # Data Provenance and Traceability
-## 
+## Data Provenance and Traceability
 **System:** A.2 Swarm Robots  
 **Author:** Oleksii Onasenko  
 **Developer:** SubstanceNet  
@@ -11,7 +11,7 @@
 
 **Publication:**
 - **Title:** "Exploring the criticality hypothesis using programmable swarm robots with Vicsek-like interactions"
-- **Authors:** Yilun Lei, Ramón Saeijs, Hilde W. Korneliussen, Giovanni A. Folkertsma, Jonas Schneider, Herbert Levine, Federico Toschi, Wouter van der Poel
+- **Authors:** Xiaokang Lei, Yalun Xiang, Mengyuan Duan, Xingguang Peng
 - **Journal:** Royal Society Interface
 - **Volume:** 20
 - **Year:** 2023

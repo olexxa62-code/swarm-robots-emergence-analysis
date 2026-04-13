@@ -49,7 +49,7 @@ class SwarmRobotsStatistics:
         """
         # Find peak
         peak_idx = self.df['R'].idxmax()
-        peak_kappa = self.df.loc[peak_idx, 'kappa']
+        peak_kappa = self.df.loc[peak_idx, 'kappa_correct']
         peak_R = self.df.loc[peak_idx, 'R']
         peak_w_ali = self.df.loc[peak_idx, 'w_ali']
         
@@ -85,9 +85,9 @@ class SwarmRobotsStatistics:
         # Classify regimes
         df = self.df.copy()
         conditions = [
-            df['kappa'] < 0.8,
-            (df['kappa'] >= 0.8) & (df['kappa'] <= 1.2),
-            df['kappa'] > 1.2
+            df['kappa_correct'] < 0.8,
+            (df['kappa_correct'] >= 0.8) & (df['kappa_correct'] <= 1.2),
+            df['kappa_correct'] > 1.2
         ]
         df['regime'] = np.select(conditions, 
                                  ['sub-critical', 'critical', 'super-critical'],
@@ -135,9 +135,9 @@ class SwarmRobotsStatistics:
         """
         df = self.df.copy()
         conditions = [
-            df['kappa'] < 0.8,
-            (df['kappa'] >= 0.8) & (df['kappa'] <= 1.2),
-            df['kappa'] > 1.2
+            df['kappa_correct'] < 0.8,
+            (df['kappa_correct'] >= 0.8) & (df['kappa_correct'] <= 1.2),
+            df['kappa_correct'] > 1.2
         ]
         df['regime'] = np.select(conditions, 
                                  ['sub-critical', 'critical', 'super-critical'],
@@ -191,7 +191,7 @@ class SwarmRobotsStatistics:
         correlations = {}
         
         # κ vs ψ (should be strong positive)
-        r_psi, p_psi = stats.pearsonr(self.df['kappa'], self.df['psi'])
+        r_psi, p_psi = stats.pearsonr(self.df['kappa_correct'], self.df['psi'])
         correlations['kappa_vs_psi'] = {
             'pearson_r': r_psi,
             'p_value': p_psi,
@@ -199,8 +199,8 @@ class SwarmRobotsStatistics:
         }
         
         # κ vs R (should be non-monotonic, peak at κ≈1)
-        r_R, p_R = stats.pearsonr(self.df['kappa'], self.df['R'])
-        spearman_R, sp_p_R = stats.spearmanr(self.df['kappa'], self.df['R'])
+        r_R, p_R = stats.pearsonr(self.df['kappa_correct'], self.df['R'])
+        spearman_R, sp_p_R = stats.spearmanr(self.df['kappa_correct'], self.df['R'])
         
         correlations['kappa_vs_R'] = {
             'pearson_r': r_R,
@@ -317,7 +317,7 @@ class SwarmRobotsStatistics:
 def main():
     """Example usage."""
     # Load results
-    data_path = "./data/analysis_results.csv"
+    data_path = "./data/swarm_robots_complete_data.csv"
     df = pd.read_csv(data_path)
     
     # Run statistical tests
@@ -329,7 +329,7 @@ def main():
     print(report)
     
     # Save report
-    output_path = "./docs/statistical_report.txt"
+    output_path = "./results/statistical_report.txt"
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, 'w') as f:
         f.write(report)

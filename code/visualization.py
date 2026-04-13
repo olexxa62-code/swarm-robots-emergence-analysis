@@ -63,7 +63,7 @@ class SwarmRobotsVisualizer:
         fig, ax = plt.subplots(figsize=self.figsize, dpi=self.dpi)
         
         # Plot data points and line
-        ax.plot(df['kappa'], df['psi'], 'o-', 
+        ax.plot(df['kappa_correct'], df['psi'], 'o-', 
                 color=self.color_data, 
                 markersize=self.markersize,
                 linewidth=self.linewidth,
@@ -89,7 +89,7 @@ class SwarmRobotsVisualizer:
         ax.legend(fontsize=self.fontsize_legend, loc='lower right')
         
         # Axis limits
-        ax.set_xlim(0, df['kappa'].max() * 1.1)
+        ax.set_xlim(0, df['kappa_correct'].max() * 1.1)
         ax.set_ylim(-0.05, 1.05)
         
         plt.tight_layout()
@@ -118,7 +118,7 @@ class SwarmRobotsVisualizer:
         fig, ax = plt.subplots(figsize=self.figsize, dpi=self.dpi)
         
         # Plot data points and line
-        ax.plot(df['kappa'], df['R'], 'o-', 
+        ax.plot(df['kappa_correct'], df['R'], 'o-', 
                 color=self.color_data, 
                 markersize=self.markersize,
                 linewidth=self.linewidth,
@@ -162,7 +162,7 @@ class SwarmRobotsVisualizer:
         ax.legend(fontsize=self.fontsize_legend, loc='upper right')
         
         # Axis limits
-        ax.set_xlim(0, df['kappa'].max() * 1.1)
+        ax.set_xlim(0, df['kappa_correct'].max() * 1.1)
         ax.set_ylim(df['R'].min() - 0.1, df['R'].max() * 1.1)
         
         plt.tight_layout()
@@ -179,7 +179,7 @@ class SwarmRobotsVisualizer:
         """
         Plot combined phase diagram: κ vs multiple metrics.
         
-        Shows ψ, R, and T_turn on same plot (normalized).
+        Shows ψ and R on same plot (normalized).
         
         Parameters
         ----------
@@ -191,11 +191,11 @@ class SwarmRobotsVisualizer:
         fig, ax1 = plt.subplots(figsize=(12, 7), dpi=self.dpi)
         
         # Primary axis: ψ and R
-        ax1.plot(df['kappa'], df['psi'], 'o-', 
+        ax1.plot(df['kappa_correct'], df['psi'], 'o-', 
                 color='blue', markersize=8, linewidth=2,
                 label='Polarization ψ (order)')
         
-        ax1.plot(df['kappa'], df['R'], 's-', 
+        ax1.plot(df['kappa_correct'], df['R'], 's-', 
                 color='red', markersize=8, linewidth=2,
                 label='Responsiveness R (function)')
         
@@ -208,25 +208,12 @@ class SwarmRobotsVisualizer:
                    linewidth=2.5, alpha=0.7, label='κ = 1')
         ax1.axvspan(0.8, 1.2, alpha=0.15, color='green')
         
-        # Secondary axis: T_turn
-        ax2 = ax1.twinx()
-        
-        # Filter out NaN values for T_turn
-        valid_mask = ~df['T_turn'].isna()
-        ax2.plot(df.loc[valid_mask, 'kappa'], 
-                df.loc[valid_mask, 'T_turn'], 
-                '^-', color='orange', markersize=8, 
-                linewidth=2, label='Turning time T_turn')
-        
-        ax2.set_ylabel('Turning time [steps]', fontsize=14, fontweight='bold')
-        ax2.tick_params(axis='y', labelcolor='orange')
         
         # Title and legends
         ax1.set_title('System A.2 Phase Diagram: Swarm Robots\nEmergence at κ ≈ 1',
                      fontsize=16, fontweight='bold')
         
         ax1.legend(loc='upper left', fontsize=12)
-        ax2.legend(loc='upper right', fontsize=12)
         
         ax1.grid(True, alpha=0.3, linestyle=':', linewidth=0.8)
         
@@ -313,7 +300,7 @@ class SwarmRobotsVisualizer:
 def main():
     """Example usage."""
     # Load results
-    data_path = Path("./data/analysis_results.csv")
+    data_path = Path("./data/swarm_robots_complete_data.csv")
     df = pd.read_csv(data_path)
     
     # Create visualizer

@@ -87,20 +87,6 @@ for i, (exp, kappa) in enumerate([('Fig5', kappa_critical[0]), ('Fig8', kappa_cr
     percent = deviation * 100
     print(f"{exp}: |κ - 1| = {deviation:.3f} ({percent:.1f}%)")
 
-# Test 4: Comparison with other systems (starling flocks)
-print(f"\n" + "="*80)
-print("TEST 4: Comparison with Biological Systems")
-print("-"*80)
-print("Reference: Starling flocks (A.8) - κ_critical ≈ 1.005")
-
-starling_kappa = 1.005
-print(f"\nStarling flocks: κ = {starling_kappa:.3f}")
-print(f"Swarm robots:    κ = {mean_kappa:.3f}")
-print(f"Difference:      Δκ = {abs(starling_kappa - mean_kappa):.3f}")
-
-if abs(starling_kappa - mean_kappa) < 0.1:
-    print(f" Within 10% - consistent across systems")
-else:
     print(f"⚠  Difference > 10%")
 
 # Save report

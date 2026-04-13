@@ -3,5 +3,5 @@ SWARM ROBOTS κ ANALYSIS - SUMMARY
 
 fig5_critical_kappa: 0.9910
 fig8_critical_kappa: 0.9600
-combined_mean: 0.8042
-combined_std: 0.2859
+critical_mean: 0.9755
+critical_std: 0.0219

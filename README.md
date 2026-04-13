@@ -88,37 +88,49 @@ where:
 
 ## Repository Structure
 ```
-swarm-robots-emergence-analysis/
-├── README.md                        # This file
-├── LICENSE                          # Apache 2.0
-├── requirements.txt                 # Python dependencies
+A.2_swarm_robots_kappa_analysis/
+├── README.md                          # This file
+├── LICENSE                            # Apache 2.0
+├── CHANGELOG.md                       # Version history
+├── CITATION.cff                       # Citation metadata
+├── CODE_OF_CONDUCT.md                 # Community standards
+├── CONTRIBUTING.md                    # Contribution guidelines
+├── INSTALL.md                         # Installation guide
+├── SECURITY.md                        # Security policy
+├── requirements.txt                   # Python dependencies
 │
-├── code/                            # Analysis scripts
-│   ├── run_full_analysis.py         # Complete pipeline
-│   ├── run_statistical_tests.py     # Statistical validation
-│   ├── generate_publication_figures.py  # High-res figures
-│   └── ...
+├── code/                              # Analysis scripts
+│   ├── run_full_analysis.py           # Complete pipeline
+│   ├── run_statistical_tests.py       # Statistical validation
+│   ├── generate_publication_figures.py # High-res figures
+│   ├── analyze_fig5_fig8.py           # Data extraction
+│   ├── emergence_analysis_fixed.py    # Core analyzer class
+│   ├── statistical_tests.py           # Statistical tests module
+│   └── visualization.py              # Visualization module
 │
 ├── data/
-│   └── swarm_robots_complete_data.csv  # Processed dataset
+│   └── swarm_robots_complete_data.csv # Processed dataset
 │
-├── docs/                            # Academic documentation
+├── docs/                              # Academic documentation
 │   ├── 01_Mathematical_Framework.md
 │   ├── 02_Experimental_Setup.md
 │   ├── 03_Data_Analysis.md
 │   ├── 04_Results.md
 │   ├── 05_Statistical_Validation.md
 │   ├── FIGURE_CAPTIONS.md
-│   └── references/                  # Primary sources (PDFs)
+│   ├── DATA_PROVENANCE.md
+│   ├── PARAMETER_JUSTIFICATION.md
+│   └── references/                    # Primary sources (PDFs)
 │
 ├── figures/
-│   └── publication/                 # 600 DPI figures
+│   ├── kappa_both_experiments.png     # Overview plot
+│   └── publication/                   # 600 DPI figures
 │       ├── fig1_phase_transition_kappa_vs_psi.png
 │       ├── fig2_functional_peak_kappa_vs_R.png
 │       ├── fig3_combined_both_experiments.png
 │       └── fig4_order_vs_function.png
 │
-└── results/                         # Analysis outputs
+└── results/                           # Analysis outputs
     ├── analysis_output.txt
     ├── statistical_report.txt
     └── summary_statistics.txt

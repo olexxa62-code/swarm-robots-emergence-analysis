@@ -35,8 +35,8 @@ This project is part of the emergence parameter κ ≈ 1 research framework. Con
 All source files must include:
 ```
 System Classification: A.2 swarm_robots_kappa_analysis
-Author: [Your Name]
-Developer: [Organization]
+Author: Oleksii Onasenko
+Developer: SubstanceNet
 Theoretical Framework: The Emergence Parameter κ ≈ 1: An Empirical Signature of Criticality in Physical and Biological Systems
 ```
 

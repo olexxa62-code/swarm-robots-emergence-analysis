@@ -1,5 +1,5 @@
 experiment,w_ali,N,psi,NND_mean,NND_min,R,T_fc,kappa_correct,regime
-fig5,10,30,0.151,191.7,89.8,,,,sub-critical
+fig5,10,30,0.151,191.7,89.8,,,0.143,sub-critical
 fig5,17,30,0.207,189.9,93.5,0.033,,0.194,sub-critical
 fig5,20,30,0.991,202.7,151.9,0.776,,0.991,critical
 fig5,30,30,0.992,202.1,152.3,0.765,,0.989,critical

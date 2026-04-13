@@ -68,8 +68,8 @@ This sharpness indicates strong cooperative effects among robots.
 - Interpretation: Optimal balance of order and flexibility
 - Mechanism: Strong coupling enables rapid information transfer while maintaining adaptability
 
-**Supercritical (κ > 1.2):**
-- Response declines: R = 0.660 at κ = 7.4 (wali = 150)
+**Post-optimal (high wali, κ < 1):**
+- Response declines: R = 0.660 at κ = 0.960 (wali = 150)
 - Interpretation: Excessive rigidity reduces responsiveness
 - Mechanism: Over-alignment creates inertia, slowing collective reorientation
 
@@ -87,8 +87,8 @@ This sharpness indicates strong cooperative effects among robots.
 - Interpretation: Optimal collective evasion
 - Mechanism: Coherent motion with sufficient flexibility to respond to dynamic threat
 
-**Supercritical (κ > 1.2):**
-- Survival declines: T_fc = 318.6 s at κ = 4.1 (wali = 150)
+**Post-optimal (high wali, κ < 1):**
+- Survival declines: T_fc = 318.6 s at κ = 0.718 (wali = 150)
 - Interpretation: Reduced evasion efficiency
 - Mechanism: Excessive cohesion may constrain escape maneuvers
 
@@ -242,7 +242,7 @@ Mean values by regime (Figure 5 data):
 
 **Critical (κ ≈ 1):** T_turn ≈ 35-45 steps (7-9 seconds)
 
-**Supercritical (κ > 2):** T_turn ≈ 60-80 steps (12-16 seconds)
+**Post-optimal (wali > 30):** T_turn ≈ 60-80 steps (12-16 seconds)
 
 **Trade-off:** Strong alignment improves coherence but reduces agility.
 

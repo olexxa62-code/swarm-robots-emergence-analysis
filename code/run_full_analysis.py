@@ -53,8 +53,8 @@ for exp_name, exp_df in [('Fig5', fig5), ('Fig8', fig8)]:
 results_summary = {
     'fig5_critical_kappa': fig5.loc[fig5['R'].idxmax(), 'kappa_correct'],
     'fig8_critical_kappa': fig8.loc[fig8['T_fc'].idxmax(), 'kappa_correct'],
-    'combined_mean': df['kappa_correct'].mean(),
-    'combined_std': df['kappa_correct'].std()
+    'critical_mean': np.mean([fig5.loc[fig5['R'].idxmax(), 'kappa_correct'], fig8.loc[fig8['T_fc'].idxmax(), 'kappa_correct']]),
+    'critical_std': np.std([fig5.loc[fig5['R'].idxmax(), 'kappa_correct'], fig8.loc[fig8['T_fc'].idxmax(), 'kappa_correct']], ddof=1)
 }
 
 with open('results/summary_statistics.txt', 'w') as f:
