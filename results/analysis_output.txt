@@ -5,7 +5,7 @@ SWARM ROBOTS: Fig5 (Response) + Fig8 (Evasion)
  FIG5 - Collective Response to Stimuli
 ----------------------------------------------------------------------
  w_ali   psi  NND_mean     R  kappa_correct
-    10 0.151     191.7   NaN            NaN
+    10 0.151     191.7   NaN          0.143
     17 0.207     189.9 0.033          0.194
     20 0.991     202.7 0.776          0.991
     30 0.992     202.1 0.765          0.989
