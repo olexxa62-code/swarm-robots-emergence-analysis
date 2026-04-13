@@ -191,6 +191,8 @@ Complete academic documentation in `docs/`:
 - **04_Results.md** - Comprehensive findings
 - **05_Statistical_Validation.md** - Hypothesis testing
 - **FIGURE_CAPTIONS.md** - Detailed figure descriptions
+- **DATA_PROVENANCE.md** - Data sources and traceability
+- **PARAMETER_JUSTIFICATION.md** - Critical parameters justification
 
 ---
 
@@ -232,13 +234,13 @@ https://doi.org/10.1098/rsif.2023.0176
 This project is licensed under the **Apache License 2.0** - see the [LICENSE](LICENSE) file for details.
 
 **Summary:**
-- ✓ Commercial use allowed
-- ✓ Modification allowed
-- ✓ Distribution allowed
-- ✓ Patent use allowed
-- ✓ Private use allowed
-- ⚠ Trademark use NOT granted
-- ⚠ Liability and warranty disclaimed
+- Commercial use allowed
+- Modification allowed
+- Distribution allowed
+- Patent use allowed
+- Private use allowed
+- Trademark use not granted
+- Liability and warranty disclaimed
 
 **Copyright © 2025 Oleksii Onasenko**
 
@@ -254,4 +256,4 @@ For questions, see documentation in `docs/` or open an issue.
 
 ---
 
-**Status:** Publication Ready | **Version:** 1.0 | **Release Date:** November 2025
+**Status:** Publication Ready | **Version:** 1.1.0 | **Release Date:** November 2025
